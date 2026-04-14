@@ -11,7 +11,7 @@ We have two types of value-based functions:
 There are two types of methods to update the value function:
 
 - With *the Monte Carlo method*, we update the value function from a complete episode, and so we **use the actual discounted return of this episode.**
-- With *the TD Learning method,* we update the value function from a step, replacing the unknown \\(G_t\\) with **an estimated return called the TD target.**
+- With *the TD Learning method,* we update the value function from a step, replacing the unknown \(G_t\) with **an estimated return called the TD target.**
 
 
 <img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/summary-learning-mtds.jpg" alt="Summary"/>

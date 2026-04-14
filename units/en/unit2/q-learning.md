@@ -99,22 +99,22 @@ At the beginning of the training, **the probability of doing exploration will b
 
 Remember that in TD Learning, we update our policy or value function (depending on the RL method we choose) **after one step of the interaction.**
 
-To produce our TD target, **we used the immediate reward \\(R_{t+1}\\) plus the discounted value of the next state**, computed by finding the action that maximizes the current Q-function at the next state. (We call that bootstrap).
+To produce our TD target, **we used the immediate reward \(R_{t+1}\) plus the discounted value of the next state**, computed by finding the action that maximizes the current Q-function at the next state. (We call that bootstrap).
 
 <img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/Q-learning-7.jpg" alt="Q-learning"/>
 
-Therefore, our \\(Q(S_t, A_t)\\) **update formula goes like this:**
+Therefore, our \(Q(S_t, A_t)\) **update formula goes like this:**
 
 <img src="https://huggingface.co/datasets/huggingface-deep-rl-course/course-images/resolve/main/en/unit3/Q-learning-8.jpg" alt="Q-learning"/>
 
 
-This means that to update our \\(Q(S_t, A_t)\\):
+This means that to update our \(Q(S_t, A_t)\):
 
-- We need \\(S_t, A_t, R_{t+1}, S_{t+1}\\).
+- We need \(S_t, A_t, R_{t+1}, S_{t+1}\).
 - To update our Q-value at a given state-action pair, we use the TD target.
 
 How do we form the TD target?
-1. We obtain the reward \\(R_{t+1}\\) after taking the action \\(A_t\\).
+1. We obtain the reward \(R_{t+1}\) after taking the action \(A_t\).
 2. To get the **best state-action pair value** for the next state, we use a greedy policy to select the next best action. Note that this is not an epsilon-greedy policy, this will always take the action with the highest state-action value.
 
 Then when the update of this Q-value is done, we start in a new state and select our action **using a epsilon-greedy policy again.**
